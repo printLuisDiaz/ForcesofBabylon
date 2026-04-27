@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dddxrhsrxk2j3"]
+
+[ext_resource type="PackedScene" uid="uid://bcvp4kofqyxjg" path="res://scenes/player.tscn" id="1_v3uhd"]
+[ext_resource type="PackedScene" uid="uid://bm28lrdjsh68g" path="res://scenes/enemy.tscn" id="2_ufxs0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6we3w"]
+albedo_color = Color(0.9941724, 0.8350215, 0.5734919, 1)
+
+[sub_resource type="Environment" id="Environment_ufxs0"]
+background_mode = 1
+background_color = Color(0.29141143, 0.5649142, 0.7838846, 1)
+ambient_light_color = Color(0.36983776, 0.5104527, 0.74670804, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.51
+fog_enabled = true
+fog_light_color = Color(0.58062583, 0.43271855, 0.29327148, 1)
+fog_height_density = 0.2
+
+[node name="main_level" type="Node3D" unique_id=2080991416]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2055224299]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.19999999, 0, -1, 0, -4.371139e-08, 0, -0.1, -91)
+use_collision = true
+size = Vector3(215, 1, 16)
+material = SubResource("StandardMaterial3D_6we3w")
+
+[node name="CharacterBody3D" parent="." unique_id=80048916 instance=ExtResource("1_v3uhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=956284449]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=412282629]
+environment = SubResource("Environment_ufxs0")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1379508054]
+transform = Transform3D(8.19, 0, 0, 0, 7.8, 0, 0, 0, 9.9225, 17, -23.400002, -41)
+size = Vector3(1, 7, 1)
+
+[node name="enemy" parent="." unique_id=1450079050 instance=ExtResource("2_ufxs0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)

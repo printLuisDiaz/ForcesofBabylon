@@ -1,0 +1,12 @@
+RigidBody3D
+Timer
+MeshInstance3D
+Marker3D
+CollisionShape3D
+Area3D
+CSGBox3D
+WorldEnvironment
+DirectionalLight3D
+CSGSphere3D
+CharacterBody3D
+Camera3D
