@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ck37kfga82rev"]
+
+[node name="Spawner" type="Node3D" unique_id=1176956925]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=439763598]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=378449924]

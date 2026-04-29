@@ -1,7 +1,8 @@
+Marker3D
+MeshInstance3D
+CSGMesh3D
 RigidBody3D
 Timer
-MeshInstance3D
-Marker3D
 CollisionShape3D
 Area3D
 CSGBox3D

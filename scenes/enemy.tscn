@@ -2,18 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://fe4egsj1qrdd" path="res://assets/mob/bat/bat_model.glb" id="1_7p1mj"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8tegq"]
-radius = 0.3413086
-height = 0.6958008
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7p1mj"]
+height = 1.992096
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p1mj"]
+albedo_color = Color(0.90588236, 0.09803922, 0.05490196, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_md0e3"]
 
 [node name="enemy" type="RigidBody3D" unique_id=1450079050]
 gravity_scale = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=530121905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3118622, 0)
-shape = SubResource("CapsuleShape3D_8tegq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0030091, 0)
+shape = SubResource("CapsuleShape3D_7p1mj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1424014917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_7p1mj")
+mesh = SubResource("CapsuleMesh_md0e3")
 
 [node name="bat_model" parent="." unique_id=116014029 instance=ExtResource("1_7p1mj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.2687887, 0)
+visible = false
